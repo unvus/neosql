@@ -1,4 +1,4 @@
-**English** | [한국어](README_GITHUB_ko.md) | [中文](README_GITHUB_zh.md)
+**English** | [한국어](README_ko.md) | [中文](README_zh.md)
 
 <div align="center">
 

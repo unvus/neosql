@@ -1,0 +1,137 @@
+[English](README.md) | **한국어** | [中文](README_zh.md)
+
+<div align="center">
+
+# NeoSQL
+
+**ERD 설계, 테이블 관리, SQL 편집, 스키마 변경 추적, 소스코드 자동 생성을 지원하는 올인원 데이터베이스 개발 플랫폼**
+
+[![License](https://img.shields.io/badge/license-Commercial-blue?style=for-the-badge)](https://neosql.unvus.com/)
+[![Platforms](https://img.shields.io/badge/platforms-Windows%20%7C%20macOS%20%7C%20Web-lightgrey?style=for-the-badge)](#사용-환경)
+[![Deployment](https://img.shields.io/badge/deployment-Desktop%20%7C%20Web%20%7C%20Offline-success?style=for-the-badge)](#환경별-기능-비교)
+
+[홈페이지](https://neosql.unvus.com/) &middot; [다운로드](#-다운로드) &middot; [이슈 및 피드백](#-이슈-및-피드백)
+
+</div>
+
+---
+
+## 개요
+
+NeoSQL은 단순한 ERD 작성 도구를 넘어, 데이터베이스 메타데이터 조회, ERD 설계 및 시각화, 테이블 상세 관리, SQL 편집, 스키마 변경 추적, 템플릿 기반 소스코드 생성을 하나의 흐름으로 제공하는 데이터베이스 개발 플랫폼입니다.
+
+웹, 데스크톱, 오프라인 환경을 함께 지원하며, 폐쇄망 환경부터 온라인 동기화 기반 협업 환경까지 조직의 보안 정책과 운영 방식에 맞춰 유연하게 적용할 수 있습니다. 또한 MCP(Model Context Protocol) 기반 AI 개발 도구 연동을 지원해, DB 접속 정보를 직접 노출하지 않는 방식으로 AI 워크플로우와 결합할 수 있습니다.
+
+## :sparkles: NeoSQL이 제공하는 가치
+
+- :white_check_mark: 실제 데이터베이스 메타데이터를 기반으로 개발 산출물을 표준화할 수 있습니다.
+- :white_check_mark: ERD와 실제 스키마를 함께 다뤄 설계와 구현 간 차이를 줄일 수 있습니다.
+- :white_check_mark: 테이블 편집, SQL 실행, 코드 생성까지 하나의 도구 안에서 연속적으로 처리할 수 있습니다.
+- :white_check_mark: 반복적인 코드 및 백엔드 산출물 생성을 자동화해 개발 생산성을 높일 수 있습니다.
+- :white_check_mark: 스키마 변경을 추적하고 후속 DDL 작업 흐름을 체계화할 수 있습니다.
+- :white_check_mark: AI 개발 도구와 연동하면서도 DB 접속 정보 노출 없이 보안성을 유지할 수 있습니다.
+- :white_check_mark: 웹, 데스크톱, 온프레미스, 폐쇄망 환경을 하나의 제품 체계 안에서 지원할 수 있습니다.
+
+## :rocket: 주요 기능
+
+| | 기능 |
+|:---:|---------|
+| :mag: | 지원 데이터베이스의 테이블, 컬럼, 키, 관계 메타데이터 조회 |
+| :art: | 실제 스키마 기반 ERD 구성 및 시각화 |
+| :pencil2: | 컬럼, 인덱스, FK, 제약조건 중심의 테이블 상세 편집 |
+| :keyboard: | 자동완성, 구문 강조, 결과 확인을 포함한 SQL 에디터 |
+| :gear: | Velocity 템플릿 기반 소스코드 생성 |
+| :file_folder: | 데스크톱 직접 생성 및 웹 ZIP 다운로드 지원 |
+| :wrench: | DBMS 특성을 반영한 DDL 생성 흐름 지원 |
+| :robot: | MCP 기반 AI 도구 연동 및 프로젝트 ID 기반 보안 접근 |
+| :shield: | DML 실행 후 Manual Commit/Rollback 기반 검토 흐름 지원 |
+| :cloud: | 오프라인 파일 저장과 온라인 동기화 방식 지원 |
+
+## :star2: 제품 특징
+
+### :art: ERD 및 스키마 시각화
+
+NeoSQL은 테이블과 관계를 시각적으로 확인하고 검토할 수 있는 ERD 기반 작업 환경을 제공합니다. 신규 설계뿐 아니라 기존 데이터베이스에 대한 Reverse Engineering과 구조 이해, 변경 영향 검토에 유용합니다.
+
+### :building_construction: 엔터프라이즈 배포 대응
+
+NeoSQL은 기업 내부 배포와 운영을 전제로 활용할 수 있도록 설계되어 있습니다. 데스크톱 설치형 배포, 웹 배포, 온프레미스 환경, 폐쇄망 환경까지 폭넓게 대응할 수 있습니다.
+
+### :handshake: 동시 편집 및 협업 동기화
+
+NeoSQL의 Online 모드에서는 Sync Server와 PouchDB/CouchDB 기반 동기화 구조를 통해 여러 사용자가 동일한 프로젝트를 공유할 수 있습니다. ERD, 테이블 설정, 연결 정보, 변환 설정 등 협업 대상 데이터가 기기 간에 동기화되며, 다른 사용자의 변경 내용도 작업 화면에서 감지하고 다시 불러오거나 검토할 수 있습니다.
+
+### :lock: AI 연동 및 안전한 실행 흐름
+
+NeoSQL은 MCP(Model Context Protocol) 표준을 지원하여 Claude, Cursor, VS Code 등 AI 개발 도구와 연동할 수 있습니다. 이때 DB 접속 정보는 AI 설정 파일에 직접 포함하지 않고 프로젝트 ID 기반으로 참조하며, DML 실행 결과도 즉시 자동 커밋하지 않고 사용자가 SQL 에디터에서 Commit 또는 Rollback을 직접 결정할 수 있도록 설계되어 있습니다.
+
+## :computer: 사용 환경
+
+NeoSQL은 세 가지 방식으로 사용할 수 있으며, 사용자의 네트워크 환경과 데이터베이스 접근 조건에 따라 적합한 방식이 달라집니다.
+
+### 어떤 환경을 선택해야 하나요?
+
+| 상황 | 권장 환경 |
+|------|:---------:|
+| 사내 DB에 직접 연결해야 하고, 팀 협업이 필요한 경우 | **Desktop (Online)** |
+| 인터넷/외부 접근이 차단된 폐쇄망 환경 | **Desktop (Offline)** |
+| 퍼블릭 DB(클라우드 DB 등)만 사용하며, 설치 없이 바로 쓰고 싶은 경우 | **Web App** |
+
+> [!NOTE]
+> 대부분의 사내 데이터베이스는 방화벽 정책상 개발자 PC에서만 접근이 허용됩니다. 이 경우 반드시 **Desktop 앱**을 사용해야 합니다. Web App은 퍼블릭 접근이 가능한 데이터베이스에서만 사용할 수 있습니다.
+
+### 환경별 기능 비교
+
+| 기능 | Web App | Desktop (Online) | Desktop (Offline) |
+|------|:-------:|:-----------------:|:-----------------:|
+| **설치 필요** | 불필요 (브라우저) | Windows / macOS | Windows / macOS |
+| **사내 DB 직접 연결** | - | O | O |
+| **퍼블릭 DB 연결** | O | O | O |
+| **팀 공동작업** | O | O | via SCM (Git 등) |
+| **ERD 동시 편집** | O | O | - |
+| **데이터 동기화** | O | O | via SCM (Git 등) |
+| **오프라인/폐쇄망** | - | - | O |
+| **MCP (AI 도구 연동)** | - | O | O |
+| **인증 방식** | OAuth | OAuth | 라이선스 키 |
+
+## :floppy_disk: 지원 데이터베이스
+
+| Database | |
+|----------|:-:|
+| MySQL | ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white) |
+| MariaDB | ![MariaDB](https://img.shields.io/badge/MariaDB-003545?style=flat-square&logo=mariadb&logoColor=white) |
+| PostgreSQL | ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white) |
+| Oracle | ![Oracle](https://img.shields.io/badge/Oracle-F80000?style=flat-square&logo=oracle&logoColor=white) |
+| SQL Server | ![SQL Server](https://img.shields.io/badge/SQL%20Server-CC2927?style=flat-square&logo=microsoftsqlserver&logoColor=white) |
+| SQLite | ![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white) |
+| H2 | ![H2](https://img.shields.io/badge/H2-0000BB?style=flat-square) |
+
+## :bulb: 주요 활용 시나리오
+
+- :repeat: CRUD 및 persistence 계층 코드 자동 생성
+- :rewind: 레거시 데이터베이스 Reverse Engineering
+- :clipboard: 프로젝트 초기 데이터 모델 설계 및 구조 검토
+- :straight_ruler: 공통 템플릿 기반 개발 표준화
+- :bar_chart: 스키마 변경 분석 및 반영 작업 효율화
+- :office: 다수의 데이터베이스를 다루는 조직의 내부 개발 생산성 향상
+
+## :package: 다운로드
+
+최신 Desktop 앱은 [Releases](../../releases) 페이지에서 다운로드할 수 있습니다.
+
+| Platform | Installer |
+|----------|-----------|
+| **Windows** | `.exe` 설치 파일 |
+| **macOS** | `.dmg` 설치 파일 |
+
+## :speech_balloon: 이슈 및 피드백
+
+버그 리포트, 기능 요청, 사용 중 문의는 이 저장소의 [Issues](../../issues)에서 관리합니다.
+
+- 이슈 등록 시 사용 환경(Web/Desktop, OS, 데이터베이스 종류)을 함께 기재해 주시면 빠른 대응에 도움이 됩니다.
+
+## :page_facing_up: 라이선스
+
+NeoSQL은 상업용 라이선스로 제공됩니다. 사용 범위, 재배포 가능 여부, 유지보수 범위, 배포 조건은 별도 계약 또는 공급 정책에 따릅니다.
+
+라이선스, 도입, 기술 지원, 엔터프라이즈 배포 관련 문의는 [홈페이지](https://neosql.unvus.com/)를 통해 진행해 주세요.

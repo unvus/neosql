@@ -4,97 +4,119 @@
 
 # NeoSQL
 
-**An all-in-one database development platform for ERD design, table management, SQL editing, schema change tracking, and automated source code generation.**
+**A database development platform connecting ERD design, SQL execution, AI-powered analysis, schema change management, and dashboards**
 
 [![License](https://img.shields.io/badge/license-Commercial-blue?style=for-the-badge)](https://neosql.unvus.com/)
-[![Platforms](https://img.shields.io/badge/platforms-Windows%20%7C%20macOS%20%7C%20Web-lightgrey?style=for-the-badge)](#usage-environments)
-[![Deployment](https://img.shields.io/badge/deployment-Desktop%20%7C%20Web%20%7C%20Offline-success?style=for-the-badge)](#feature-comparison)
+[![Platforms](https://img.shields.io/badge/platforms-Windows%20%7C%20macOS%20%7C%20Web-lightgrey?style=for-the-badge)](#environments)
+[![Projects](https://img.shields.io/badge/projects-Local%20%7C%20Account-success?style=for-the-badge)](#choosing-a-project-type)
 
-[Website](https://neosql.unvus.com/) &middot; [Download](#-download) &middot; [Issues & Feedback](#-issues-and-feedback)
+[Website](https://neosql.unvus.com/) &middot; [Download](https://neosql.unvus.com/) &middot; [Issues & Feedback](#issues-and-feedback)
 
 </div>
 
 ---
 
+Documentation as of: **2026-10-30**
+
 ## Overview
 
-NeoSQL goes beyond traditional ERD tools. It brings together database metadata inspection, ERD design and visualization, detailed table management, SQL editing, schema change tracking, and template-based source code generation in a single, unified workflow.
+NeoSQL brings understanding database structures, designing schemas, and working with real data into one environment. Visualize existing databases as ERDs, manage tables and database objects, edit SQL query results, and turn queries into dashboards.
 
-It supports web, desktop, and offline environments, making it suitable for everything from air-gapped deployments to real-time online collaboration. NeoSQL also supports integration with AI development tools through MCP (Model Context Protocol), enabling AI-assisted workflows without directly exposing database connection details.
+The built-in **AI Assistant** helps with natural language SQL generation, data retrieval and analysis, query tuning, and error diagnosis using actual schemas and execution context. Through **MCP (Model Context Protocol)**, external AI development tools can use NeoSQL's database tools and work with ERDs.
 
-## :sparkles: What NeoSQL Delivers
+Available as a Desktop app for Windows and macOS and as a Web App, NeoSQL lets you **start with a local project without signing up or signing in** on Desktop. Account projects let you share projects with teammates and synchronize your work.
 
-- :white_check_mark: Standardize development outputs based on real database metadata.
-- :white_check_mark: Reduce the gap between design and implementation by working with ERDs and actual schemas side by side.
-- :white_check_mark: Edit tables, run SQL, and generate code within a single workflow.
-- :white_check_mark: Improve productivity by automating repetitive code generation and backend deliverables.
-- :white_check_mark: Track schema changes and streamline follow-up DDL workflows.
-- :white_check_mark: Integrate with AI development tools while keeping database connection details secure.
-- :white_check_mark: Support web, desktop, on-premise, and air-gapped environments within a single platform.
+## Key Features
 
-## :rocket: Key Features
+### ERD Design and Schema Change Management
 
-| | Feature |
-|:---:|---------|
-| :mag: | Inspect table, column, key, and relationship metadata for supported databases |
-| :art: | Design and visualize ERDs based on actual schemas |
-| :pencil2: | Edit table details, including columns, indexes, foreign keys, and constraints |
-| :keyboard: | Use a SQL editor with autocomplete, syntax highlighting, and result inspection |
-| :gear: | Generate source code with Velocity-based templates |
-| :file_folder: | Generate files directly in the desktop app or download them as ZIP files in the web app |
-| :wrench: | Support DDL generation workflows tailored to each DBMS |
-| :robot: | Integrate with MCP-compatible AI tools using secure project-ID-based access |
-| :shield: | Review DML execution results with manual commit/rollback control |
-| :cloud: | Support both offline file storage and online synchronization |
+- Reverse-engineer ERDs from database tables, columns, keys, and relationships
+- Design tables and relationships; edit columns, indexes, foreign keys, and constraints
+- Track ERD changes and preview and apply DBMS-specific DDL
+- Compare tables, views, and other schema structures within the same DBMS and review change DDL
+- Export ERD images and share models through the gallery
 
-## :star2: Highlights
+### SQL Editor and Data Workflows
 
-### :art: ERD and Schema Visualization
+- Syntax highlighting, SQL formatting, schema-aware autocomplete, and inline suggestions from execution history
+- Independent database sessions per tab and searchable, reusable SQL execution history
+- View, update, and delete data in the result grid; import and export data
+- Auto Commit and Manual Commit modes with uncommitted transaction indicators
+- Inspect execution plans and use AI for query improvement and error analysis
 
-NeoSQL provides an ERD-based workspace for visually inspecting and reviewing tables and relationships. It is useful not only for new database design, but also for reverse engineering existing databases, understanding their structure, and evaluating the impact of schema changes.
+> Result editing, DDL application, and Commit/Rollback depend on the DBMS and query. Some database systems implicitly commit DDL or do not allow it to be rolled back in a transaction.
 
-### :building_construction: Enterprise-Ready Deployment
+### Built-in AI Assistant and External MCP Integration
 
-NeoSQL is designed for enterprise deployment and operation. It supports desktop installations, web deployments, on-premise environments, and air-gapped networks, making it flexible enough to fit a wide range of security and infrastructure requirements.
+- Write SQL in natural language and analyze data using actual query results
+- Tune queries and diagnose SQL errors using tables, columns, relationships, and execution plans
+- Create and modify ERDs and table designs in AI conversations
+- Connect AI providers including OpenAI, Anthropic, Google Gemini, and Ollama
+- Connect to self-hosted Ollama servers or Ollama Cloud and browse available models
+- Use provider keys saved to your account or device and review AI call and token usage
+- Use metadata lookup, SQL execution, and ERD design tools from external MCP clients
+- Connect to the current or a specified project with global or project-specific MCP configuration
 
-### :handshake: Collaborative Editing and Synchronization
+Configure the connections and schemas AI can access and the policies for reading and changing data. Depending on those policies, you can review and approve the SQL and its target before execution. Account projects also support role-based permissions, sensitive-column masking, and DDL approval.
 
-In Online mode, multiple users can work on the same project through a synchronization architecture based on Sync Server and PouchDB/CouchDB. ERDs, table settings, connection information, and transformation settings are synchronized across devices. Changes made by other users can also be detected, reviewed, and reloaded from within the workspace.
+You do not need to enter database passwords directly in MCP client configuration. Please be aware that AI features may send schema information or query results to your selected AI provider, depending on your settings and approvals.
 
-### :lock: AI Integration with a Controlled Execution Flow
+### Query-based Dashboards
 
-NeoSQL supports the MCP (Model Context Protocol) standard, allowing integration with AI development tools such as Claude, Cursor, and VS Code. Database connection details are referenced by project ID rather than embedded directly in AI tool configuration files. In addition, DML execution results are not committed automatically, so users can explicitly choose whether to commit or roll back changes in the SQL editor.
+- Visualize SELECT results as number cards, tables, and bar, line, area, pie, scatter, and other charts
+- Turn SQL editor queries into dashboard tiles
+- Arrange and resize tiles; configure query periods and automatic refresh intervals
+- Use DBMS-specific monitoring presets for sessions, locks, performance, storage, and schema quality
+- Query periods in the connected database's timezone, with options to display values in your timezone
 
-## :computer: Usage Environments
+Dashboards are available in both local and account projects. Automatic refresh runs while the dashboard tab is visible. Preset availability depends on the DBMS and connection permissions.
 
-NeoSQL can be used in three different ways, depending on your network environment and database access requirements.
+### Data Standards and DBMS-specific Management
 
-### Which environment should I choose?
+- Manage logical names, terminology, and data type standards with data dictionaries and domain packs
+- Import and export dictionaries and domains, select versions, and review changes against the original
+- Discover and install assets such as data dictionaries and domain packs from the Store
+- Browse and manage views, indexes, sequences, routines, users, permissions, and other objects within each DBMS's supported scope
+- Use PostgreSQL RLS policy simulation, Supabase integration, spatial data, and user-defined types
+- Select Databricks SQL Warehouses, inspect Delta table properties and version history, and restore table versions
 
-| Situation | Recommended |
-|-----------|:-----------:|
-| You need direct access to internal databases with team collaboration | **Desktop (Online)** |
-| You work in an air-gapped or restricted network environment | **Desktop (Offline)** |
-| You only use publicly accessible databases (such as cloud databases) and want to get started without installation | **Web App** |
+### Team Collaboration and Project Synchronization
 
-> [!NOTE]
-> In most enterprise environments, internal databases are only accessible from a developer’s local machine due to firewall policies. In such cases, you must use the **Desktop app**. The **Web App** can only connect to publicly accessible databases.
+Account projects let you invite teammates, configure role-based permissions, and synchronize shared work such as ERDs and project settings. Changes made by other users can be detected, reloaded, and reviewed in your workspace.
 
-### Feature Comparison
+## Environments
 
-| Feature | Web App | Desktop (Online) | Desktop (Offline) |
-|---------|:-------:|:----------------:|:-----------------:|
-| **Installation required** | No (browser-based) | Windows / macOS | Windows / macOS |
-| **Direct access to internal databases** | No | Yes | Yes |
-| **Access to public databases** | Yes | Yes | Yes |
-| **Team collaboration** | Yes | Yes | Via SCM (Git, etc.) |
-| **Real-time collaborative ERD editing** | Yes | Yes | No |
-| **Data synchronization** | Yes | Yes | Via SCM (Git, etc.) |
-| **Offline / air-gapped support** | No | No | Yes |
-| **MCP (AI tool integration)** | No | Yes | Yes |
-| **Authentication method** | OAuth | OAuth | License key |
+### Desktop and Web
 
-## :floppy_disk: Supported Databases
+| Category | Desktop | Web App |
+|----------|---------|---------|
+| Runtime | Windows, macOS (Apple Silicon and Intel) | Browser |
+| Sign-in | Start without an account | Required |
+| Database connection path | From the PC running the app | From the service server |
+| Internal-network and local databases | Databases accessible from your PC | Only databases accessible from the service server |
+| Local projects | Supported | Not supported |
+| Account projects and team collaboration | Supported | Supported |
+| External AI tools via MCP | Supported | Not supported |
+| AI provider keys | Device-local and account keys | Account keys |
+
+> Use the Desktop app for databases accessible only from your internal network or development PC.
+
+### Choosing a Project Type
+
+| Category | Local Project | Account Project |
+|----------|---------------|-----------------|
+| Requirements | Desktop; sign-in optional | Desktop or Web; sign-in required |
+| Project data | Stored on the device | Account-based storage and synchronization |
+| Primary use | Individual work and databases on internal or isolated networks | Team sharing and work across devices |
+| ERD, SQL, dashboards, data dictionaries | Supported | Supported |
+| Built-in AI | Requires a provider accessible from the device | Requires an accessible provider |
+| Team members, role permissions, DDL approval, sensitive-column masking | Not supported | Supported |
+
+Basic database work in local projects does not require account sign-in. You can work without internet access with databases reachable from your device; AI requires a provider reachable in that environment. Online features such as downloading public Store assets and updates require a network connection.
+
+Converting between local and account project types is not supported.
+
+## Supported Databases
 
 | Database | |
 |----------|:-:|
@@ -105,33 +127,41 @@ NeoSQL can be used in three different ways, depending on your network environmen
 | SQL Server | ![SQL Server](https://img.shields.io/badge/SQL%20Server-CC2927?style=flat-square&logo=microsoftsqlserver&logoColor=white) |
 | SQLite | ![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white) |
 | H2 | ![H2](https://img.shields.io/badge/H2-0000BB?style=flat-square) |
+| Databricks | ![Databricks](https://img.shields.io/badge/Databricks-FF3621?style=flat-square&logo=databricks&logoColor=white) |
+| Snowflake | ![Snowflake](https://img.shields.io/badge/Snowflake-29B5E8?style=flat-square&logo=snowflake&logoColor=white) |
+| Google BigQuery | ![Google BigQuery](https://img.shields.io/badge/Google%20BigQuery-669DF6?style=flat-square&logo=googlebigquery&logoColor=white) |
 
-## :bulb: Common Use Cases
 
-- :repeat: Automated generation of CRUD and persistence-layer code
-- :rewind: Reverse engineering of legacy databases
-- :clipboard: Initial data model design and structural review for new projects
-- :straight_ruler: Standardization of development outputs through shared templates
-- :bar_chart: Schema change analysis and migration workflow optimization
-- :office: Improved internal development productivity for organizations managing multiple databases
+Supported objects, DDL, result editing, and management features vary by DBMS. Integration features for PostgreSQL-based Supabase are also available.
 
-## :package: Download
+## Common Use Cases
 
-You can download the latest Desktop app from the [Releases](../../releases) page.
+- **Understand existing systems**: Visualize legacy database tables and relationships as ERDs and analyze their structure with AI
+- **Review designs and changes**: Align terminology with data dictionaries and review ERD changes and schema differences through DDL
+- **Everyday SQL development**: Write and run queries, edit results, and reuse history in one workspace
+- **Data analysis and monitoring**: Explore data in natural language and turn recurring queries into dashboards
+- **Connect AI development tools**: Give external agents access to NeoSQL's database context and execution tools through MCP
+- **Individual work and team collaboration**: Start locally or share models and settings with teammates in account projects
+
+## Download
+
+Get the latest Desktop installer for your operating system using the download buttons on the [NeoSQL website](https://neosql.unvus.com/).
 
 | Platform | Installer |
 |----------|-----------|
-| **Windows** | `.exe` installer |
-| **macOS** | `.dmg` installer |
+| Windows | `.exe` |
+| macOS — Apple Silicon / Intel | `.dmg` |
 
-## :speech_balloon: Issues and Feedback
+Visit the [website](https://neosql.unvus.com/) for the Web App and product information.
 
-Bug reports, feature requests, and usage questions can be submitted through the [Issues](../../issues) section of this repository.
+## Issues and Feedback
 
-- When opening an issue, please include your environment details (Web/Desktop, OS, and database type) to help us respond more quickly.
+Use this repository's [Issues](https://github.com/unvus/neosql/issues) for bug reports, feature requests, and questions. You can also report bugs from inside the app, reviewing and attaching screenshots and diagnostic information without signing in.
 
-## :page_facing_up: License
+Please include your app version, environment (Desktop/Web, OS), database type, and steps to reproduce. Exclude sensitive information such as passwords, API keys, and personal data.
 
-NeoSQL is provided under a commercial license. The scope of use, redistribution rights, maintenance coverage, and deployment terms are subject to separate agreements or commercial policies.
+## License
 
-For inquiries about licensing, purchasing, technical support, or enterprise deployment, please contact us through the [website](https://neosql.unvus.com/).
+NeoSQL is available under a commercial license. Usage scope, redistribution, maintenance coverage, and deployment terms are governed by separate agreements or supply policies.
+
+For licensing, adoption, technical support, and enterprise deployment inquiries, visit the [website](https://neosql.unvus.com/).

@@ -4,100 +4,122 @@
 
 # NeoSQL
 
-**ERD 설계, 테이블 관리, SQL 편집, 스키마 변경 추적, 소스코드 자동 생성을 지원하는 올인원 데이터베이스 개발 플랫폼**
+**ERD 설계부터 SQL 실행, AI 기반 분석, 스키마 변경 관리와 대시보드까지 하나로 연결하는 데이터베이스 개발 플랫폼**
 
 [![License](https://img.shields.io/badge/license-Commercial-blue?style=for-the-badge)](https://neosql.unvus.com/)
 [![Platforms](https://img.shields.io/badge/platforms-Windows%20%7C%20macOS%20%7C%20Web-lightgrey?style=for-the-badge)](#사용-환경)
-[![Deployment](https://img.shields.io/badge/deployment-Desktop%20%7C%20Web%20%7C%20Offline-success?style=for-the-badge)](#환경별-기능-비교)
+[![Projects](https://img.shields.io/badge/projects-Local%20%7C%20Account-success?style=for-the-badge)](#프로젝트-선택)
 
-[홈페이지](https://neosql.unvus.com/) &middot; [다운로드](#-다운로드) &middot; [이슈 및 피드백](#-이슈-및-피드백)
+[홈페이지](https://neosql.unvus.com/) &middot; [다운로드](https://neosql.unvus.com/) &middot; [이슈 및 피드백](#이슈-및-피드백)
 
 </div>
 
 ---
 
+문서 작성 기준일: **2026-10-30**
+
 ## 개요
 
-NeoSQL은 단순한 ERD 작성 도구를 넘어, 데이터베이스 메타데이터 조회, ERD 설계 및 시각화, 테이블 상세 관리, SQL 편집, 스키마 변경 추적, 템플릿 기반 소스코드 생성을 하나의 흐름으로 제공하는 데이터베이스 개발 플랫폼입니다.
+NeoSQL은 데이터베이스 구조를 이해하고, 설계하고, 실제 데이터를 다루는 작업을 하나의 환경에서 이어갈 수 있는 데이터베이스 개발 플랫폼입니다. 기존 데이터베이스를 ERD로 시각화하고, 테이블과 데이터베이스 오브젝트를 관리하며, SQL 실행 결과를 편집하거나 대시보드로 구성할 수 있습니다.
 
-웹, 데스크톱, 오프라인 환경을 함께 지원하며, 폐쇄망 환경부터 온라인 동기화 기반 협업 환경까지 조직의 보안 정책과 운영 방식에 맞춰 유연하게 적용할 수 있습니다. 또한 MCP(Model Context Protocol) 기반 AI 개발 도구 연동을 지원해, DB 접속 정보를 직접 노출하지 않는 방식으로 AI 워크플로우와 결합할 수 있습니다.
+내장 **AI Assistant**는 실제 스키마와 실행 컨텍스트를 바탕으로 자연어 SQL 작성, 데이터 조회·분석, 쿼리 튜닝과 오류 진단을 도와줍니다. **MCP(Model Context Protocol)**를 통해 NeoSQL의 데이터베이스 도구와 ERD 작업에 외부 AI 개발 도구를 활용할 수 있습니다.
 
-## :sparkles: NeoSQL이 제공하는 가치
+Windows·macOS용 Desktop 앱과 Web App을 지원하며, **회원가입이나 로그인 없이 로컬 프로젝트로 시작**할 수 있습니다. 계정 프로젝트를 사용하면 팀원과 프로젝트를 공유하고 작업 내용을 동기화할 수 있습니다.
 
-- :white_check_mark: 실제 데이터베이스 메타데이터를 기반으로 개발 산출물을 표준화할 수 있습니다.
-- :white_check_mark: ERD와 실제 스키마를 함께 다뤄 설계와 구현 간 차이를 줄일 수 있습니다.
-- :white_check_mark: 테이블 편집, SQL 실행, 코드 생성까지 하나의 도구 안에서 연속적으로 처리할 수 있습니다.
-- :white_check_mark: 반복적인 코드 및 백엔드 산출물 생성을 자동화해 개발 생산성을 높일 수 있습니다.
-- :white_check_mark: 스키마 변경을 추적하고 후속 DDL 작업 흐름을 체계화할 수 있습니다.
-- :white_check_mark: AI 개발 도구와 연동하면서도 DB 접속 정보 노출 없이 보안성을 유지할 수 있습니다.
-- :white_check_mark: 웹, 데스크톱, 온프레미스, 폐쇄망 환경을 하나의 제품 체계 안에서 지원할 수 있습니다.
+## 주요 기능
 
-## :rocket: 주요 기능
+### ERD 설계와 스키마 변경 관리
 
-| | 기능 |
-|:---:|---------|
-| :mag: | 지원 데이터베이스의 테이블, 컬럼, 키, 관계 메타데이터 조회 |
-| :art: | 실제 스키마 기반 ERD 구성 및 시각화 |
-| :pencil2: | 컬럼, 인덱스, FK, 제약조건 중심의 테이블 상세 편집 |
-| :keyboard: | 자동완성, 구문 강조, 결과 확인을 포함한 SQL 에디터 |
-| :gear: | Velocity 템플릿 기반 소스코드 생성 |
-| :file_folder: | 데스크톱 직접 생성 및 웹 ZIP 다운로드 지원 |
-| :wrench: | DBMS 특성을 반영한 DDL 생성 흐름 지원 |
-| :robot: | MCP 기반 AI 도구 연동 및 프로젝트 ID 기반 보안 접근 |
-| :shield: | DML 실행 후 Manual Commit/Rollback 기반 검토 흐름 지원 |
-| :cloud: | 오프라인 파일 저장과 온라인 동기화 방식 지원 |
+- 실제 데이터베이스의 테이블·컬럼·키·관계를 읽어 ERD를 구성하는 Reverse Engineering
+- 테이블·관계 설계, 컬럼·인덱스·외래 키·제약조건 편집
+- ERD 변경 사항 추적과 DBMS별 DDL 미리보기·적용
+- 같은 DBMS의 스키마 간 테이블·뷰 등 구조 차이 비교와 변경 DDL 검토
+- ERD 이미지 내보내기와 갤러리를 통한 모델 공유
 
-## :star2: 제품 특징
+### SQL 에디터와 데이터 작업
 
-### :art: ERD 및 스키마 시각화
+- 구문 강조, SQL 포맷팅, 스키마 기반 자동완성과 실행 이력 기반 인라인 제안
+- 탭별 독립 DB 세션과 SQL 실행 이력 검색·재사용
+- 결과 그리드에서 데이터 조회·수정·삭제, 데이터 가져오기·내보내기
+- Auto Commit 또는 Manual Commit 모드와 미커밋 트랜잭션 표시
+- 실행 계획 확인과 AI를 활용한 쿼리 개선·오류 분석
 
-NeoSQL은 테이블과 관계를 시각적으로 확인하고 검토할 수 있는 ERD 기반 작업 환경을 제공합니다. 신규 설계뿐 아니라 기존 데이터베이스에 대한 Reverse Engineering과 구조 이해, 변경 영향 검토에 유용합니다.
+> 결과 편집, DDL 적용, Commit/Rollback 등은 DBMS와 쿼리의 지원 범위에 따라 달라집니다. DDL이 암묵적으로 커밋되거나 트랜잭션으로 되돌릴 수 없는 DBMS도 있습니다.
 
-### :building_construction: 엔터프라이즈 배포 대응
+### 내장 AI Assistant와 외부 MCP 연동
 
-NeoSQL은 기업 내부 배포와 운영을 전제로 활용할 수 있도록 설계되어 있습니다. 데스크톱 설치형 배포, 웹 배포, 온프레미스 환경, 폐쇄망 환경까지 폭넓게 대응할 수 있습니다.
+- 자연어로 SQL을 작성하고, 실제 조회 결과를 바탕으로 데이터를 분석
+- 테이블·컬럼·관계와 실행 계획을 참고한 쿼리 튜닝 및 SQL 오류 진단
+- AI 대화에서 ERD와 테이블 설계 생성·수정
+- OpenAI, Anthropic, Google Gemini, Ollama 등 AI Provider 연결
+- Ollama의 자체 호스팅 서버와 Cloud 연결, 서버에서 사용 가능한 모델 조회
+- 계정 또는 기기에 저장한 Provider Key 사용과 AI 호출·토큰 사용량 확인
+- 외부 MCP 클라이언트에서 메타데이터 조회, SQL 실행, ERD 설계 도구 활용
+- 공통·프로젝트별 MCP 설정으로 현재 프로젝트 또는 지정한 프로젝트에 연결
 
-### :handshake: 동시 편집 및 협업 동기화
+AI가 접근할 연결·스키마와 데이터 조회·변경 정책을 설정하고, 정책에 따라 실행할 SQL과 대상을 확인한 뒤 승인할 수 있습니다. 계정 프로젝트에서는 역할 권한, 민감 컬럼 마스킹과 DDL 승인 기능도 활용할 수 있습니다.
 
-NeoSQL의 Online 모드에서는 Sync Server와 PouchDB/CouchDB 기반 동기화 구조를 통해 여러 사용자가 동일한 프로젝트를 공유할 수 있습니다. ERD, 테이블 설정, 연결 정보, 변환 설정 등 협업 대상 데이터가 기기 간에 동기화되며, 다른 사용자의 변경 내용도 작업 화면에서 감지하고 다시 불러오거나 검토할 수 있습니다.
+MCP 클라이언트 설정에 DB 접속 비밀번호를 직접 입력할 필요는 없습니다. 다만 AI 기능은 설정과 승인 범위에 따라 스키마 정보나 조회 결과를 선택한 AI Provider로 전송할 수 있으니 주의해 주세요.
 
-### :lock: AI 연동 및 안전한 실행 흐름
+### 쿼리 기반 대시보드
 
-NeoSQL은 MCP(Model Context Protocol) 표준을 지원하여 Claude, Cursor, VS Code 등 AI 개발 도구와 연동할 수 있습니다. 이때 DB 접속 정보는 AI 설정 파일에 직접 포함하지 않고 프로젝트 ID 기반으로 참조하며, DML 실행 결과도 즉시 자동 커밋하지 않고 사용자가 SQL 에디터에서 Commit 또는 Rollback을 직접 결정할 수 있도록 설계되어 있습니다.
+- SELECT 결과를 숫자 카드, 표, 막대·선·영역·원형·산점도 등 차트로 시각화
+- SQL 에디터의 쿼리를 대시보드 타일로 연결
+- 타일 배치·크기 조절, 조회 기간과 자동 새로고침 주기 설정
+- 세션·잠금·성능·스토리지·스키마 품질 등을 살펴보는 DBMS별 모니터링 프리셋
+- 연결 DB의 시간대를 기준으로 한 기간 조회와 사용자 시간대 표시 옵션
 
-## :computer: 사용 환경
+대시보드는 로컬 프로젝트와 계정 프로젝트 모두에서 사용할 수 있습니다. 자동 새로고침은 대시보드 탭이 표시되는 동안 동작하며, 프리셋의 사용 가능 여부는 DBMS와 접속 권한에 따라 달라집니다.
 
-NeoSQL은 세 가지 방식으로 사용할 수 있으며, 사용자의 네트워크 환경과 데이터베이스 접근 조건에 따라 적합한 방식이 달라집니다.
+### 데이터 표준화와 DBMS별 상세 관리
 
-### 어떤 환경을 선택해야 하나요?
+- 데이터 사전과 도메인 팩으로 논리명·용어·데이터 타입 표준 관리
+- 사전·도메인 가져오기·내보내기, 버전 선택과 원본 대비 변경 확인
+- Store에서 데이터 사전·도메인 팩 등 자산 탐색·설치
+- DBMS별 뷰·인덱스·시퀀스·루틴·사용자·권한 등 오브젝트 조회 및 지원 범위 내 관리
+- PostgreSQL RLS 정책 시뮬레이션, Supabase 연계, 공간 데이터와 사용자 정의 타입 처리
+- Databricks SQL Warehouse 선택, Delta 테이블 속성·버전 이력 조회와 버전 복원
 
-| 상황 | 권장 환경 |
-|------|:---------:|
-| 사내 DB에 직접 연결해야 하고, 팀 협업이 필요한 경우 | **Desktop (Online)** |
-| 인터넷/외부 접근이 차단된 폐쇄망 환경 | **Desktop (Offline)** |
-| 퍼블릭 DB(클라우드 DB 등)만 사용하며, 설치 없이 바로 쓰고 싶은 경우 | **Web App** |
+### 팀 협업과 프로젝트 동기화
 
-> [!NOTE]
-> 대부분의 사내 데이터베이스는 방화벽 정책상 개발자 PC에서만 접근이 허용됩니다. 이 경우 반드시 **Desktop 앱**을 사용해야 합니다. Web App은 퍼블릭 접근이 가능한 데이터베이스에서만 사용할 수 있습니다.
+계정 프로젝트에서는 팀원 초대와 역할별 권한을 설정하고, ERD와 프로젝트 설정 등 공유 작업 데이터를 동기화할 수 있습니다. 다른 사용자의 변경 사항을 감지해 작업 화면에서 다시 불러오고 검토할 수 있습니다.
 
-### 환경별 기능 비교
+## 사용 환경
 
-| 기능 | Web App | Desktop (Online) | Desktop (Offline) |
-|------|:-------:|:-----------------:|:-----------------:|
-| **설치 필요** | 불필요 (브라우저) | Windows / macOS | Windows / macOS |
-| **사내 DB 직접 연결** | - | O | O |
-| **퍼블릭 DB 연결** | O | O | O |
-| **팀 공동작업** | O | O | via SCM (Git 등) |
-| **ERD 동시 편집** | O | O | - |
-| **데이터 동기화** | O | O | via SCM (Git 등) |
-| **오프라인/폐쇄망** | - | - | O |
-| **MCP (AI 도구 연동)** | - | O | O |
-| **인증 방식** | OAuth | OAuth | 라이선스 키 |
+### Desktop과 Web
 
-## :floppy_disk: 지원 데이터베이스
+| 구분 | Desktop | Web App |
+|------|---------|---------|
+| 실행 환경 | Windows, macOS(Apple Silicon·Intel) | 브라우저 |
+| 로그인 | 계정 없이 시작 가능 | 로그인 필요 |
+| DB 연결 경로 | 앱을 실행하는 PC에서 연결 | 서비스 서버에서 연결 |
+| 사내망·로컬 DB | PC에서 접근 가능한 DB에 연결 | 서비스 서버에서 접근 가능한 DB만 연결 |
+| 로컬 프로젝트 | 지원 | 미지원 |
+| 계정 프로젝트·팀 협업 | 지원 | 지원 |
+| 외부 AI 도구 MCP 연동 | 지원 | 미지원 |
+| AI Provider Key | 기기 로컬 키·계정 키 | 계정 키 |
 
-| Database | |
-|----------|:-:|
+> 사내망이나 개발 PC에서만 접근할 수 있는 데이터베이스에는 Desktop 앱을 사용해 주세요.
+
+### 프로젝트 선택
+
+| 구분 | 로컬 프로젝트 | 계정 프로젝트 |
+|------|---------------|---------------|
+| 사용 조건 | Desktop, 로그인 선택 | Desktop·Web, 로그인 필수 |
+| 프로젝트 데이터 | 해당 기기에 저장 | 계정 기반 저장·동기화 |
+| 주요 용도 | 개인 작업, 사내망·폐쇄망 DB 작업 | 팀 공유와 여러 기기에서의 작업 |
+| ERD·SQL·대시보드·데이터 사전 | 지원 | 지원 |
+| 내장 AI | 기기에서 사용 가능한 Provider 연결 필요 | 사용 가능한 Provider 연결 필요 |
+| 팀 멤버·역할 권한·DDL 승인·민감 컬럼 마스킹 | 미지원 | 지원 |
+
+로컬 프로젝트의 기본 DB 작업에는 계정 로그인이 필요하지 않습니다. 인터넷이 없는 환경에서도 기기에서 접근 가능한 DB로 작업할 수 있으며, AI는 해당 환경에서 접근 가능한 Provider가 필요합니다. 공개 Store에서 제공되는 항목의 다운로드와 업데이트 등 온라인 기능에는 네트워크 연결이 필요합니다.
+
+로컬 프로젝트와 계정 프로젝트의 타입 전환은 지원하지 않습니다.
+
+## 지원 데이터베이스
+
+| 데이터베이스 | |
+|--------------|:-:|
 | MySQL | ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white) |
 | MariaDB | ![MariaDB](https://img.shields.io/badge/MariaDB-003545?style=flat-square&logo=mariadb&logoColor=white) |
 | PostgreSQL | ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white) |
@@ -105,32 +127,39 @@ NeoSQL은 세 가지 방식으로 사용할 수 있으며, 사용자의 네트�
 | SQL Server | ![SQL Server](https://img.shields.io/badge/SQL%20Server-CC2927?style=flat-square&logo=microsoftsqlserver&logoColor=white) |
 | SQLite | ![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white) |
 | H2 | ![H2](https://img.shields.io/badge/H2-0000BB?style=flat-square) |
+| Databricks | ![Databricks](https://img.shields.io/badge/Databricks-FF3621?style=flat-square&logo=databricks&logoColor=white) |
+| Snowflake | ![Snowflake](https://img.shields.io/badge/Snowflake-29B5E8?style=flat-square&logo=snowflake&logoColor=white) |
+| Google BigQuery | ![Google BigQuery](https://img.shields.io/badge/Google%20BigQuery-669DF6?style=flat-square&logo=googlebigquery&logoColor=white) |
 
-## :bulb: 주요 활용 시나리오
+DBMS마다 지원하는 오브젝트, DDL, 결과 편집과 관리 기능의 범위가 다릅니다. PostgreSQL 기반 Supabase를 위한 연계 기능도 제공합니다.
 
-- :repeat: CRUD 및 persistence 계층 코드 자동 생성
-- :rewind: 레거시 데이터베이스 Reverse Engineering
-- :clipboard: 프로젝트 초기 데이터 모델 설계 및 구조 검토
-- :straight_ruler: 공통 템플릿 기반 개발 표준화
-- :bar_chart: 스키마 변경 분석 및 반영 작업 효율화
-- :office: 다수의 데이터베이스를 다루는 조직의 내부 개발 생산성 향상
+## 주요 활용 시나리오
 
-## :package: 다운로드
+- **기존 시스템 파악**: 레거시 DB의 테이블과 관계를 ERD로 시각화하고 AI와 함께 구조 분석
+- **설계와 변경 검토**: 데이터 사전으로 용어를 맞추고, ERD 변경과 스키마 차이를 DDL로 검토
+- **일상적인 SQL 개발**: 쿼리 작성·실행·결과 편집·이력 재사용을 한 화면에서 처리
+- **데이터 분석과 모니터링**: 자연어로 데이터를 탐색하고 반복 조회를 대시보드로 구성
+- **AI 개발 도구 연결**: 외부 에이전트가 NeoSQL의 DB 컨텍스트와 실행 도구를 활용하도록 MCP 연동
+- **개인 작업과 팀 협업**: 로컬 프로젝트로 시작하거나 계정 프로젝트에서 팀원과 모델·설정 공유
 
-최신 Desktop 앱은 [Releases](../../releases) 페이지에서 다운로드할 수 있습니다.
+## 다운로드
 
-| Platform | Installer |
-|----------|-----------|
-| **Windows** | `.exe` 설치 파일 |
-| **macOS** | `.dmg` 설치 파일 |
+최신 Desktop 앱은 [NeoSQL 홈페이지](https://neosql.unvus.com/)의 다운로드 버튼에서 운영체제에 맞는 설치 파일을 받을 수 있습니다.
 
-## :speech_balloon: 이슈 및 피드백
+| 플랫폼 | 설치 파일 |
+|--------|-----------|
+| Windows | `.exe` |
+| macOS — Apple Silicon / Intel | `.dmg` |
 
-버그 리포트, 기능 요청, 사용 중 문의는 이 저장소의 [Issues](../../issues)에서 관리합니다.
+Web App과 제품 안내는 [홈페이지](https://neosql.unvus.com/)에서 확인할 수 있습니다.
 
-- 이슈 등록 시 사용 환경(Web/Desktop, OS, 데이터베이스 종류)을 함께 기재해 주시면 빠른 대응에 도움이 됩니다.
+## 이슈 및 피드백
 
-## :page_facing_up: 라이선스
+버그 리포트, 기능 요청, 사용 중 문의는 이 저장소의 [Issues](https://github.com/unvus/neosql/issues)에서 관리합니다. 앱 안의 버그 신고 기능으로도 스크린샷과 진단 정보를 검토·첨부해 신고할 수 있으며, 로그인이 필요하지 않습니다.
+
+이슈 등록 시 앱 버전, 사용 환경(Desktop/Web, OS), 데이터베이스 종류와 재현 절차를 함께 기재해 주세요. 비밀번호·API Key·개인정보 등 민감한 내용은 제외해 주세요.
+
+## 라이선스
 
 NeoSQL은 상업용 라이선스로 제공됩니다. 사용 범위, 재배포 가능 여부, 유지보수 범위, 배포 조건은 별도 계약 또는 공급 정책에 따릅니다.
 
